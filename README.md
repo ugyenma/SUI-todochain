@@ -14,7 +14,7 @@ A decentralized Todo List application built on the **SUI blockchain**, allowing 
 - Professional card-style UI for a clean, modern look.
 
 ---
-##Tech Stack
+## Tech Stack
 
 Frontend: React, TypeScript, Lucide Icons, CSS
 
@@ -24,7 +24,7 @@ Smart Contract: Move Language
 
 UI Design: Card-based professional layout
 
-Getting Started
+## Getting Started
 1. Clone the Repository
 git clone https://github.com/ugyenma/SUI-todochain.git
 cd SUI-todochain/sources
@@ -51,7 +51,7 @@ npm start
 Open http://localhost:3000
  in your browser.
 
-Usage
+## Usage
 
 Connect your SUI wallet.
 
