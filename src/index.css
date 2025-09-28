@@ -1,216 +1,145 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-
-:root {
-  --primary: #6c5ce7;
-  --primary-hover: #8e82f5;
-  --success: #00b894;
-  --danger: #e17055;
-  --light-bg: #f0f2f5;
-  --text-dark: #2d3436;
-  --white: #ffffff;
-  --card-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
-  --transition: all 0.3s ease-in-out;
+/* Container */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #0f172a;
+  padding: 2rem 1rem;
+  font-family: 'Inter', sans-serif;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--light-bg);
-  color: var(--text-dark);
-  padding: 2rem;
-  line-height: 1.6;
-}
-
-.container {
-  max-width: 900px;
-  margin: auto;
-}
-
-/* Header */
-h1 {
-  text-align: center;
-  font-size: 2.5rem;
-  color: var(--primary);
-  margin-bottom: 2rem;
-}
-
-h2 {
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-  color: var(--primary);
-}
-
-/* Inputs */
-input[type="text"],
-textarea {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border: 1.5px solid #ccc;
+/* Card */
+.card {
+  background: #1e293b;
   border-radius: 12px;
-  font-size: 1rem;
-  background-color: var(--white);
-  transition: var(--transition);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  width: 400px;
+  padding: 1.5rem;
+  color: #ffffff;
 }
 
-input:focus,
-textarea:focus {
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.15);
-  outline: none;
+.card-header h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  color: #871bcf;
+  text-align: center;
+}
+
+.card-header p {
+  font-size: 0.95rem;
+  color: #f4eff8;
+}
+
+/* Sections */
+.card-section {
+  margin-top: 1rem;
+}
+
+/* Wallet */
+.wallet-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wallet-section .icon {
+  width: 20px;
+  height: 20px;
+  color: #818cf8;
+  margin-right: 0.5rem;
 }
 
 /* Buttons */
-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  padding: 0.65rem 1.5rem;
-  border: none;
-  border-radius: 40px;
-  font-size: 0.95rem;
+.btn {
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
   font-weight: 500;
+  border: none;
   cursor: pointer;
-  color: white;
-  transition: var(--transition);
-}
-
-button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+  transition: all 0.2s ease-in-out;
 }
 
 .btn-primary {
-  background-color: var(--primary);
+  background-color: #6366f1;
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-hover);
+  background-color: #4f46e5;
+}
+
+.btn-primary-lg {
+  width: 100%;
+  padding: 0.7rem;
+  font-size: 1rem;
 }
 
 .btn-success {
-  background-color: var(--success);
+  background-color: #22c55e;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 
 .btn-success:hover {
-  background-color: #00a383;
+  background-color: #16a34a;
 }
 
 .btn-danger {
-  background-color: var(--danger);
+  background-color: #6563f6;
 }
 
 .btn-danger:hover {
-  background-color: #d35400;
+  background-color: #f45151;
 }
 
-/* Connect Wallet Button */
-.connect-wallet {
-  background: linear-gradient(to right, #6c5ce7, #a29bfe);
-  font-size: 1rem;
-  font-weight: 600;
-  padding: 0.75rem 2rem;
-  border-radius: 40px;
-  box-shadow: var(--card-shadow);
-  transition: var(--transition);
-  color: white;
+.btn-delete {
+  background: transparent;
+  border: none;
+  color: #f87171;
+  cursor: pointer;
+  
 }
 
-.connect-wallet:hover {
-  background: linear-gradient(to right, #8e82f5, #c0bfff);
-  transform: scale(1.03);
+/* Input */
+input[type="text"] {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  margin-right: 0.5rem;
 }
 
-/* Proposal Cards */
-.proposals-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+/* Todos */
+.todo-list {
+  margin-top: 1rem;
 }
 
-.proposal-card {
-  background: var(--white);
-  padding: 1.5rem;
-  border-radius: 16px;
-  box-shadow: var(--card-shadow);
-  transition: var(--transition);
-}
-
-.proposal-card:hover {
-  transform: translateY(-2px);
-}
-
-.proposal-meta {
-  font-size: 0.9rem;
-  color: #636e72;
-  margin-top: 0.5rem;
-}
-
-.vote-results {
+.todo-item {
   display: flex;
   justify-content: space-between;
-  margin-top: 1.2rem;
+  align-items: center;
+  background: #334155;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
 }
 
-.vote-results button {
-  font-size: 0.85rem;
-  padding: 0.45rem 1.2rem;
-  border-radius: 30px;
-}
-
-/* Section Spacing */
-.section {
-  margin-bottom: 3rem;
-}
-
-/* Alert */
-.alert {
-  background: #ffeaa7;
-  color: #2d3436;
-  padding: 1rem;
-  border-radius: 12px;
-  margin-bottom: 2rem;
+/* Empty state */
+.empty-state {
   text-align: center;
-  font-weight: 500;
+  padding: 2rem 0;
+  color: #94a3b8;
 }
 
-/* Misc */
-.voted-marker {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  color: var(--success);
+.icon-small {
+  width: 16px;
+  height: 16px;
 }
 
-.total-votes {
-  font-size: 0.85rem;
-  font-style: italic;
-  margin-top: 0.5rem;
-  color: #636e72;
-}
-
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-thumb {
-  background: var(--primary);
-  border-radius: 10px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .vote-results {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  button {
-    width: 100%;
-    justify-content: center;
-  }
+.icon-large {
+  width: 48px;
+  height: 48px;
 }
