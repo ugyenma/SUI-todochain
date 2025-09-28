@@ -14,33 +14,7 @@ A decentralized Todo List application built on the **SUI blockchain**, allowing 
 - Professional card-style UI for a clean, modern look.
 
 ---
-
-## Smart Contract
-
-The `todo::todo_list` Move module manages the on-chain Todo List:
-
-```move
-module todo::todo_list;
-
-use std::string::String;
-
-public struct TodoList has key, store {
-    id: UID,
-    items: vector<String>
-}
-
-public fun new(ctx: &mut TxContext): TodoList {
-    let list = TodoList { id: object::new(ctx), items: vector[] };
-    (list)
-}
-
-public fun add(list: &mut TodoList, item: String) { list.items.push_back(item); }
-public fun remove(list: &mut TodoList, index: u64): String { list.items.remove(index) }
-public fun delete(list: TodoList) { let TodoList { id, items: _ } = list; id.delete(); }
-public fun length(list: &TodoList): u64 { list.items.length() }
-
-
-Tech Stack
+##Tech Stack
 
 Frontend: React, TypeScript, Lucide Icons, CSS
 
@@ -88,3 +62,29 @@ Add todo items using the input box.
 Remove items individually or delete the entire list.
 
 All data is stored on the SUI blockchain.
+## Smart Contract
+
+The `todo::todo_list` Move module manages the on-chain Todo List:
+
+```move
+module todo::todo_list;
+
+use std::string::String;
+
+public struct TodoList has key, store {
+    id: UID,
+    items: vector<String>
+}
+
+public fun new(ctx: &mut TxContext): TodoList {
+    let list = TodoList { id: object::new(ctx), items: vector[] };
+    (list)
+}
+
+public fun add(list: &mut TodoList, item: String) { list.items.push_back(item); }
+public fun remove(list: &mut TodoList, index: u64): String { list.items.remove(index) }
+public fun delete(list: TodoList) { let TodoList { id, items: _ } = list; id.delete(); }
+public fun length(list: &TodoList): u64 { list.items.length() }
+
+
+
